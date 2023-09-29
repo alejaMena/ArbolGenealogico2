@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Búsqueda de Persona</title>
+</head>
+<body>
+  <h2>Búsqueda de Persona</h2>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Buscar</button>
+  </form>
+
+  {% if resultado %}
+    <h3>Resultado de la búsqueda:</h3>
+    <p>Nombre de la persona: {{ resultado.persona }}</p>
+    <p>Parentesco: {{ resultado.parentesco }}</p>
+    <p>Estado Civil: {{ resultado.estado_civil }}</p>
+  {% endif %}
+</body>
+</html>
